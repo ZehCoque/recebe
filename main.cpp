@@ -20,12 +20,7 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
-    QObject *rootObj = engine.rootObjects().first();
-    QObject *item = rootObj->findChild<QObject*>("recebeButtonMouseArea");
+    qmlRegisterType<RecebeComando>("RecebeComando", 1, 0, "RecebeComando");
 
-    RecebeComando myClass;
-    bool success= QObject::connect(item, SIGNAL(qmlSignal(QString)),
-                     &myClass, SLOT(cppSlot(QString)));
-    Q_ASSERT(success);
     return app.exec();
 }

@@ -42,7 +42,7 @@ ApplicationWindow {
                 text: "Receber"
                 width: parent.width
                 onClicked: {
-                    stackView.push("Receber.qml")
+                    stackView.push("Recebe.qml")
                     drawer.close()
                 }
             }
